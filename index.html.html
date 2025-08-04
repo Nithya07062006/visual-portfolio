@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #f4f4f4;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  background: #6200ea;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+  z-index: 1000;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: 500;
+}
+
+.theme-toggle {
+  margin-left: 20px;
+  background: #ffcc00;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+section {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 32px;
+  text-align: center;
+  color: #6200ea;
+  margin-bottom: 20px;
+}
+
+.card-container, .skills-container, .certificates-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  padding: 10px;
+}
+
+.card, .certificate-card, .skill-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover, .certificate-card:hover, .skill-card:hover {
+  transform: translateY(-8px);
+}
+
+.certificate-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+h4 {
+  margin-top: 10px;
+  color: #333;
+}
+
+.dark .card, .dark .certificate-card, .dark .skill-card {
+  background: #1e1e1e;
+  color: #f4f4f4;
+}
+
+.dark nav {
+  background: #000;
+}
+
+.dark .theme-toggle {
+  background: #ff9800;
+  color: black;
+}</style>
+</head>
+<body>
+
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#certificates">Certificates</a>
+    <button class="theme-toggle" onclick="toggleTheme()">Dark Mode</button>
+  </nav>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <h2 class="fade-in"><span class="typing" id="typing"></span></h2>
+    <div class="about-section fade-in">
+      <p>
+        Hi, I'm <strong>Nithyashree HS</strong> — a passionate B.Tech student in Information Science & Engineering at Presidency University, Bengaluru 📍.
+        I'm driven by curiosity and innovation, with a deep interest in <strong>Artificial Intelligence, Full Stack Development</strong>, and real-world tech problem solving 💻✨.<br><br>
+        I’ve successfully completed internships in both AI and Web Development, gaining hands-on experience in real projects involving Arduino, Raspberry Pi, and modern web technologies.
+        A quick learner and strong communicator, I’m always excited to grow through new opportunities, whether in code or creativity!
+      </p>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects">
+    <h2 class="fade-in">Projects</h2>
+    <div class="card-container fade-in">
+      <div class="card">
+        <div class="card-content">
+          <h3>Voice-Controlled HID</h3>
+          <p>Developed a hands-free human interface device using Arduino Uno and HC-05 Bluetooth.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h3>FPO Income Tracker</h3>
+          <p>Created a Raspberry Pi–based system to analyze income growth of FPOs under WDC 2.0.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h3>Weather App</h3>
+          <p>Live weather data display app using HTML, CSS, and JavaScript.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills">
+    <h2 class="fade-in">Skills</h2>
+    <div class="skills-container fade-in">
+      <div class="skill-card">
+        <div class="card-content">
+          <h3>Technical Skills</h3>
+          <ul>
+            <li>Python</li>
+            <li>Java</li>
+            <li>C, C++, SQL</li>
+            <li>HTML, CSS, JavaScript</li>
+            <li>Arduino, Raspberry Pi</li>
+            <li>Linux (Basics)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="card-content">
+          <h3>Languages</h3>
+          <ul>
+            <li>English</li>
+            <li>Kannada</li>
+            <li>Telugu</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATES SECTION -->
+  <section id="certificates">
+    <h2 class="fade-in">Certificates</h2>
+    <div class="certificates-container fade-in">
+      <div class="certificate-card">
+        <img src="alfido_internship.jpg" alt="AI Internship">
+        <h4>Artificial Intelligence Internship – Alfido Tech</h4>
+        <p>1-month internship focused on AI fundamentals, projects, and real-time applications.</p>
+      </div>
+      <div class="certificate-card">
+        <img src="vaultofcodes_internship.jpg" alt="Web Dev Internship">
+        <h4>Web Development Internship – VaultofCodes</h4>
+        <p>Covered HTML, CSS, JS & deployment. Certified by Google for Education partner.</p>
+      </div>
+      <div class="certificate-card">
+        <img src="infosys_data_science.png" alt="Data Science">
+        <h4>Intro to Data Science – Infosys Springboard</h4>
+        <p>Data analysis, ML basics, and visualization techniques.</p>
+      </div>
+      <div class="certificate-card">
+        <img src="infosys_nlp.png" alt="NLP">
+        <h4>Intro to NLP – Infosys Springboard</h4>
+        <p>Text processing, tokenization, and Python NLP pipelines.</p>
+      </div>
+      <div class="certificate-card">
+        <img src="infosys_ai.png" alt="AI">
+        <h4>Intro to Artificial Intelligence – Infosys Springboard</h4>
+        <p>Core AI logic, neural networks, and intelligent systems overview.</p>
+      </div>
+      <div class="certificate-card">
+        <img src="scaler_python.png" alt="Scaler">
+        <h4>Python for Beginners – Scaler</h4>
+        <p>121 videos, 16 modules, and 10 hands-on challenges.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const fadeElements = document.querySelectorAll('.fade-in');
+    function handleScroll() {
+      fadeElements.forEach(el => {
+        const position = el.getBoundingClientRect().top;
+        if (position < window.innerHeight - 50) {
+          el.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('load', handleScroll);
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const btn = document.querySelector('.theme-toggle');
+      btn.textContent = document.body.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
+    }
+
+    const typingText = "Hi, I'm Nithyashree HS – Aspiring AI & Web Developer 💻🚀";
+    let index = 0;
+    function typeEffect() {
+      if (index < typingText.length) {
+        document.getElementById('typing').textContent += typingText.charAt(index);
+        index++;
+        setTimeout(typeEffect, 100);
+      }
+    }
+    window.addEventListener('load', typeEffect);
+  </script>
+
+</body>
+</html>
